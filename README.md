@@ -11,8 +11,11 @@ Learn more about me, please refer to http://jsongo.github.io.
 Pull the code:
 
 mkdir vim
+
 git init 
+
 git remote add origin https://github.com/jsongo/vim_jsongo.git
+
 git pull origin jsongo
 
 - Install vim `sudo apt-get install vim`
