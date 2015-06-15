@@ -16,7 +16,7 @@ hi IncSearch       term=reverse ctermfg=11 ctermbg=10 gui=reverse guifg=slategre
 hi Search          term=reverse ctermfg=47 ctermbg=34 guifg=#00ff00 guibg=#00af00
 hi MoreMsg         term=bold ctermfg=2 gui=bold guifg=SeaGreen
 hi ModeMsg         term=bold ctermfg=130 gui=bold guifg=goldenrod
-hi LineNr          term=underline ctermfg=3 guifg=Yellow
+hi LineNr	       guifg=green	ctermfg=green cterm=none
 hi Question        term=standout ctermfg=10 gui=bold guifg=springgreen
 hi StatusLine      term=bold,reverse cterm=bold,reverse guifg=black guibg=#c2bfa5
 hi StatusLineNC    term=reverse cterm=reverse guifg=grey50 guibg=#c2bfa5
@@ -35,7 +35,7 @@ hi DiffText        term=reverse cterm=bold ctermbg=1 gui=bold guibg=Red
 hi SignColumn      term=standout ctermfg=14 ctermbg=242 guifg=Cyan guibg=Grey
 hi Cursor          guifg=#303030 guibg=#00ff5f
 hi lCursor         guifg=bg guibg=fg
-hi Normal          ctermfg=39 ctermbg=235 guifg=#00afff guibg=#262626
+hi Normal          ctermfg=39 ctermbg=235 guifg=#00afff guibg=black
 hi Comment         term=bold ctermfg=251 guifg=#c6c6c6
 hi Constant        term=underline ctermfg=165 guifg=#d700ff
 hi Special         term=bold ctermfg=3 guifg=DarkYellow

@@ -15,7 +15,7 @@ let colors_name = "darkblack"
 
 hi Normal	guifg=lightgrey guibg=black	ctermfg=lightgray ctermbg=black
 hi ErrorMsg	guifg=white guibg=lightblue	ctermfg=white ctermbg=lightblue
-hi Visual	guifg=lightblue guibg=fg	gui=reverse	ctermfg=lightblue ctermbg=fg cterm=reverse
+hi Visual          term=reverse cterm=reverse guifg=khaki guibg=olivedrab
 hi VisualNOS	guifg=lightblue guibg=fg	gui=reverse,underline	ctermfg=lightblue ctermbg=fg cterm=reverse,underline
 hi Todo		guifg=red guibg=black	ctermfg=red	ctermbg=black
 hi Search	guifg=white guibg=black	ctermfg=white ctermbg=black cterm=underline term=underline

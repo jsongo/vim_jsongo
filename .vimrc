@@ -36,8 +36,9 @@ set cul "高亮光标所在行
 set cuc
 set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示  
 set go=             " 不要图形按钮  
-"color desert     " 设置背景主题  
-color ron     " 设置背景主题  
+" color desertEx     " 设置背景主题  
+colorscheme blacklight
+"color ron     " 设置背景主题  
 "color torte     " 设置背景主题  
 "set guifont=Courier_New:h10:cANSI   " 设置字体  
 "autocmd InsertLeave * se nocul  " 用浅色高亮当前行  
@@ -98,7 +99,7 @@ au BufRead,BufNewFile *.{go}   set filetype=go
 au BufRead,BufNewFile *.{js}   set filetype=javascript
 "rkdown to HTML  
 nmap md :!~/.vim/markdown.pl % > %.html <CR><CR>
-nmap fi :!firefox %.html & <CR><CR>
+nmap fi :!chrome %.html & <CR><CR>
 nmap \ \cc
 vmap \ \cc
 
@@ -167,20 +168,18 @@ autocmd BufNewFile * normal G
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :nmap <silent> <F9> <ESC>:Tlist<RETURN>
 " shift tab pages
-map <S-Left> :tabp<CR>
-map <S-Right> :tabn<CR>
 map! <C-Z> <Esc>zzi
 map! <C-O> <C-Y>,
-map <C-A> ggVG$"+y
+" map <C-A> ggVG$"+y
 map <F12> gg=G
-map <C-w> <C-w>w
+" map <C-w> <C-w>w
 imap <C-k> <C-y>,
 imap <C-t> <C-q><TAB>
 imap <C-j> <ESC>
 " 选中状态下 Ctrl+c 复制
 "map <C-v> "*pa
 imap <C-v> <Esc>"*pa
-imap <C-a> <Esc>^
+" imap <C-a> <Esc>
 imap <C-e> <Esc>$
 vmap <C-c> "+y
 set mouse=v
@@ -192,8 +191,8 @@ nnoremap <C-F2> :vert diffsplit
 "nnoremap <Leader>fu :CtrlPFunky<Cr>
 "nnoremap <C-n> :CtrlPFunky<Cr>
 "列出当前目录文件  
-map <F3> :NERDTreeToggle<CR>
-imap <F3> <ESC> :NERDTreeToggle<CR>
+" map <F3> :NERDTreeToggle<CR>
+" imap <F3> <ESC> :NERDTreeToggle<CR>
 "打开树状文件目录  
 map <C-F3> \be  
 :autocmd BufRead,BufNewFile *.dot map <F5> :w<CR>:!dot -Tjpg -o %<.jpg % && eog %<.jpg  <CR><CR> && exec "redr!"
@@ -290,12 +289,11 @@ set completeopt=preview,menu
 "自动保存
 set autowrite
 "set ruler                   " 打开状态栏标尺
-"set cursorline              " 突出显示当前行
+set cursorline              " 突出显示当前行
 set magic                   " 设置魔术
 set guioptions-=T           " 隐藏工具栏
 set guioptions-=m           " 隐藏菜单栏
 ""set foldcolumn=0
-""set foldmethod=indent 
 ""set foldlevel=3 
 " 不要使用vi的键盘模式，而是vim自己的
 set nocompatible
@@ -310,7 +308,59 @@ set noswapfile
 set ignorecase
 
 
-
+" by jsongo
+set fencs=utf-8,GB2312 " 设置打开文件编码"
+set backspace=indent,eol,start whichwrap+=<,>,[,]
+set foldmethod=indent 
+set foldlevel=99
+"设置tags  
+set tags=tags  
+set autochdir 
+let mapleader = ","
+let Tlist_Auto_Highlight_Tag=1
+let Tlist_Auto_Update=1
+let Tlist_Display_Tag_Scope=1
+let Tlist_Enable_Dold_Column=1
+let Tlist_Use_SingleClick=1
+ia  dtimee <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
+ia  ddatt <c-r>=strftime("%Y年%m月%d日")<cr>
+ia  ddate <c-r>=strftime("%Y年%m月%d日 %H:%M:%")<cr>
+ia jmail <c-r> jsongo@jsongo.com<cr>
+let g:syntastic_warning_symbol = '⚠'
+let g:csyntastic_error_symbol = '✗'
+" pep8_map
+let g:pep8_map=',ch' 
+" jshint
+let g:JSHintHighlightErrorLine = 1
+" map keys
+nmap ,er :Errors<cr>
+" nmap <c-m> :SyntasticReset<cr>
+nmap ,sc :SyntasticCheck<cr>
+map <leader><leader>c :MBEClose<cr> 
+map <leader><leader>p :tabp<cr> 
+map <leader><leader>n :tabn<cr> 
+map <silent><leader>al :AcpLock<CR>
+map <silent><leader>au :AcpUnlock<CR>
+nmap ,, :FufCoverageFile <cr>
+nmap tl :TlistToggle<cr>
+nmap ,bn :bn<cr>
+nmap ,bp :bp<cr>
+nmap <C-s> :update<cr>
+nmap ,nl O<Esc>j
+nmap nl o<Esc>k
+" nmap <D-s> :update<cr>
+nmap <C-n> :nohl<cr>
+nmap ,js :JSHintToggle<cr>
+" nmap wm :WMToggle<cr>
+nmap wm :NERDTreeToggle<cr>  
+nmap ,s :setlocal spell!<cr>
+" other
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+inoremap <C-k> <C-o>O
+nnoremap <Space> za
 
 set linespace=0
 " 增强模式中的命令行自动完成操作
@@ -363,9 +413,6 @@ let Tlist_Exist_OnlyWindow = 1  " 如果只有一个buffer，kill窗口也kill�
 ""let Tlist_File_Fold_Auto_Close = 0  " 不要关闭其他文件的tags  
 ""let Tlist_Enable_Fold_Column = 0    " 不要显示折叠树  
 "let Tlist_Show_One_File=1            "不同时显示多个文件的tag，只显示当前文件的
-"设置tags  
-"set tags=tags  
-"set autochdir 
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -405,8 +452,7 @@ set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
-"set nocompatible               " be iMproved
-"filetype off                   " required!
+"set nocompatible               " be iMproved "filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -439,7 +485,10 @@ Bundle 'SQLComplete.vim'
 Bundle 'Javascript-OmniCompletion-with-YUI-and-j'
 "Bundle 'JavaScript-Indent'
 "Bundle 'Better-Javascript-Indentation'
-Bundle 'jslint.vim'
+Bundle 'jshint.vim'
+Bundle 'VisIncr'
+Bundle 'vim-multiple-cursors'
+Bundle 'nerdcommenter'
 Bundle "pangloss/vim-javascript"
 Bundle 'Vim-Script-Updater'
 Bundle 'ctrlp.vim'
