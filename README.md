@@ -71,3 +71,6 @@ git pull origin jsongo
     input: `ddatt` will make it a short date string.
     input: `ddate` for Chinese date
     input: `jmail` for my email
+
+11. to save the current split view.
+    it will be saved automatically as long as you don't close the split view one by one. Instead, close them will :qa.

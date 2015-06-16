@@ -17,9 +17,9 @@ sudo pip install -ZU autopep8
 sudo ln -s /usr/bin/ctags /usr/local/bin/ctags
 mv -f ~/.vim ~/.vim_old
 mv -f ~/.vimrc ~/.vimrc_old
-mv -f .vimrc ~/
 mkdir ~/.vim
 mv -f * ~/.vim
+ln -s ~/.vim/.vimrc ~/
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 echo "jsongo正在努力为您安装bundle程序" > jsongo
 echo "安装完毕将自动退出" >> jsongo
