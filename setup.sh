@@ -13,7 +13,7 @@ if which brew >/dev/null;then
     brew install vim ctags git astyle
 fi
 
-sudo easy_install -ZU autopep8 
+sudo pip install -ZU autopep8 
 sudo ln -s /usr/bin/ctags /usr/local/bin/ctags
 mv -f ~/.vim ~/.vim_old
 mv -f ~/.vimrc ~/.vimrc_old

@@ -18,10 +18,11 @@ git remote add origin https://github.com/jsongo/vim_jsongo.git
 
 git pull origin jsongo
 
-- Install vim `sudo apt-get install vim`
-- Install ctags：`sudo apt-get install ctags`
-- Other tools needed：`sudo apt-get install xclip vim-gnome astyle python-setuptools`
-- python format tool：`sudo easy_install -ZU autopep8`
+- Install vim `sudo yum install vim`
+- Install ctags：`sudo yum install ctags`
+- Other tools needed：`sudo yum install xclip vim-gnome astyle python-setuptools`
+- Install pip: `sudo easy_install pip`
+- python format tool：`sudo pip install -ZU autopep8`
 - `sudo ln -s /usr/bin/ctags /usr/local/bin/ctags`
 - mv -f ~/.vim ~/.vim_old
 - mv -f ~/.vimrc ~/.vimrc_old
@@ -29,5 +30,44 @@ git pull origin jsongo
 - mkdir ~/.vim
 - mv -f * ~/.vim
 - clone bundle ：`git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
-- Run `:BundleInstall` to build these plugins.
+- Run `:BundleInstall` in vim to build these plugins.
 - restart the vim to see the surprize.
+
+### How to use this splendid vim.
+1. tab:
+    nt  press these two keys to create a new tab with the current open window.
+    ,,p to change to previous tab
+    ,,n to change to next tab
+
+2. to open file tree, just press wm
+
+3. Split window:
+    ctrl+w s, this button group will create a horizontal split window.
+    ctrl+w v, this button group will create a vertical split window.
+    ctrl+h/j/k/l, these groups will change current cursor to the left/down/up/right split window.
+
+4. to open Tlist, press tl
+
+5. to add a new line without enter into edit mode, press nl
+    or to pre-append a new line, press `,nl`, only a key different from nl.
+
+6. to switch from different buffer:
+    ,bn to change to the new buffer
+    ,bp to change to the previous buffer
+
+7. to fold the code:
+    zM to fold all
+    zn to expand all
+    <space> to fold current
+
+8. to zoom window:
+    ctrl+w w,  this key group will full-screen the current split window.
+
+9. to change tab to <space>:
+    press tt
+
+10. to input time in edit mode:
+    input: `dtime` ctrl+] (I'll only tell about the word to input without the ctrl+], but you'll still have to press it.)
+    input: `ddatt` will make it a short date string.
+    input: `ddate` for Chinese date
+    input: `jmail` for my email

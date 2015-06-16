@@ -54,8 +54,8 @@ set laststatus=2    " 启动显示状态行(1),总是显示状态行(2)
 set nocompatible  "去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限  
 " 显示中文帮助
 if version >= 603
-	set helplang=cn
-	set encoding=utf-8
+    set helplang=cn
+    set encoding=utf-8
 endif
 " 自动缩进
 set autoindent
@@ -115,50 +115,50 @@ nmap tt :%s/\t/    /g<CR>
 autocmd BufNewFile *.cpp,*.[ch],*.sh,*.rb,*.java,*.py exec ":call SetTitle()" 
 ""定义函数SetTitle，自动插入文件头 
 func SetTitle() 
-	"如果文件类型为.sh文件 
-	if &filetype == 'sh' 
-		call setline(1,"\#!/bin/bash") 
-		call append(line("."), "") 
+    "如果文件类型为.sh文件 
+    if &filetype == 'sh' 
+        call setline(1,"\#!/bin/bash") 
+        call append(line("."), "") 
     elseif &filetype == 'python'
         call setline(1,"#!/usr/bin/env python")
         call append(line("."),"# coding=utf-8")
-	    call append(line(".")+1, "") 
+        call append(line(".")+1, "") 
 
     elseif &filetype == 'ruby'
         call setline(1,"#!/usr/bin/env ruby")
         call append(line("."),"# encoding: utf-8")
-	    call append(line(".")+1, "")
+        call append(line(".")+1, "")
 
 "    elseif &filetype == 'mkd'
 "        call setline(1,"<head><meta charset=\"UTF-8\"></head>")
-	else 
-		call setline(1, "/*************************************************************************") 
-		call append(line("."), "	> File Name: ".expand("%")) 
-		call append(line(".")+1, "	> Author: ") 
-		call append(line(".")+2, "	> Mail: ") 
-		call append(line(".")+3, "	> Created Time: ".strftime("%c")) 
-		call append(line(".")+4, " ************************************************************************/") 
-		call append(line(".")+5, "")
-	endif
-	if expand("%:e") == 'cpp'
-		call append(line(".")+6, "#include<iostream>")
-		call append(line(".")+7, "using namespace std;")
-		call append(line(".")+8, "")
-	endif
-	if &filetype == 'c'
-		call append(line(".")+6, "#include<stdio.h>")
-		call append(line(".")+7, "")
-	endif
-	if expand("%:e") == 'h'
-		call append(line(".")+6, "#ifndef _".toupper(expand("%:r"))."_H")
-		call append(line(".")+7, "#define _".toupper(expand("%:r"))."_H")
-		call append(line(".")+8, "#endif")
-	endif
-	if &filetype == 'java'
-		call append(line(".")+6,"public class ".expand("%:r"))
-		call append(line(".")+7,"")
-	endif
-	"新建文件后，自动定位到文件末尾
+    else 
+        call setline(1, "/*************************************************************************") 
+        call append(line("."), "    > File Name: ".expand("%")) 
+        call append(line(".")+1, "    > Author: ") 
+        call append(line(".")+2, "    > Mail: ") 
+        call append(line(".")+3, "    > Created Time: ".strftime("%c")) 
+        call append(line(".")+4, " ************************************************************************/") 
+        call append(line(".")+5, "")
+    endif
+    if expand("%:e") == 'cpp'
+        call append(line(".")+6, "#include<iostream>")
+        call append(line(".")+7, "using namespace std;")
+        call append(line(".")+8, "")
+    endif
+    if &filetype == 'c'
+        call append(line(".")+6, "#include<stdio.h>")
+        call append(line(".")+7, "")
+    endif
+    if expand("%:e") == 'h'
+        call append(line(".")+6, "#ifndef _".toupper(expand("%:r"))."_H")
+        call append(line(".")+7, "#define _".toupper(expand("%:r"))."_H")
+        call append(line(".")+8, "#endif")
+    endif
+    if &filetype == 'java'
+        call append(line(".")+6,"public class ".expand("%:r"))
+        call append(line(".")+7,"")
+    endif
+    "新建文件后，自动定位到文件末尾
 endfunc 
 autocmd BufNewFile * normal G
 
@@ -199,20 +199,20 @@ map <C-F3> \be
 "C，C++ 按F5编译运行
 map <F5> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
-	exec "w"
-	if &filetype == 'c'
-		exec "!g++ % -o %<"
-		exec "!time ./%<"
-	elseif &filetype == 'cpp'
-		exec "!g++ % -o %<"
-		exec "!time ./%<"
-	elseif &filetype == 'java' 
-		exec "!javac %" 
-		exec "!time java %<"
-	elseif &filetype == 'sh'
-		:!time bash %
-	elseif &filetype == 'python'
-		exec "!time python2.7 %"
+    exec "w"
+    if &filetype == 'c'
+        exec "!g++ % -o %<"
+        exec "!time ./%<"
+    elseif &filetype == 'cpp'
+        exec "!g++ % -o %<"
+        exec "!time ./%<"
+    elseif &filetype == 'java' 
+        exec "!javac %" 
+        exec "!time java %<"
+    elseif &filetype == 'sh'
+        :!time bash %
+    elseif &filetype == 'python'
+        exec "!time python2.7 %"
     elseif &filetype == 'html'
         exec "!firefox % &"
     elseif &filetype == 'go'
@@ -221,14 +221,14 @@ func! CompileRunGcc()
     elseif &filetype == 'mkd'
         exec "!~/.vim/markdown.pl % > %.html &"
         exec "!firefox %.html &"
-	endif
+    endif
 endfunc
 "C,C++的调试
 map <F8> :call Rungdb()<CR>
 func! Rungdb()
-	exec "w"
-	exec "!g++ % -g -o %<"
-	exec "!gdb ./%<"
+    exec "w"
+    exec "!g++ % -g -o %<"
+    exec "!gdb ./%<"
 endfunc
 
 
@@ -322,10 +322,10 @@ let Tlist_Auto_Update=1
 let Tlist_Display_Tag_Scope=1
 let Tlist_Enable_Dold_Column=1
 let Tlist_Use_SingleClick=1
-ia  dtimee <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
-ia  ddatt <c-r>=strftime("%Y年%m月%d日")<cr>
-ia  ddate <c-r>=strftime("%Y年%m月%d日 %H:%M:%")<cr>
-ia jmail <c-r> jsongo@jsongo.com<cr>
+iab dtime <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
+iab ddatt <c-r>=strftime("%Y年%m月%d日")<cr>
+iab ddate <c-r>=strftime("%Y年%m月%d日 %H:%M:%")<cr>
+iab jmail jsongo@jsongo.com<cr>
 let g:syntastic_warning_symbol = '⚠'
 let g:csyntastic_error_symbol = '✗'
 " pep8_map
@@ -339,6 +339,7 @@ nmap ,sc :SyntasticCheck<cr>
 map <leader><leader>c :MBEClose<cr> 
 map <leader><leader>p :tabp<cr> 
 map <leader><leader>n :tabn<cr> 
+nmap nt :tab split<cr> 
 map <silent><leader>al :AcpLock<CR>
 map <silent><leader>au :AcpUnlock<CR>
 nmap ,, :FufCoverageFile <cr>
@@ -348,6 +349,10 @@ nmap ,bp :bp<cr>
 nmap <C-s> :update<cr>
 nmap ,nl O<Esc>j
 nmap nl o<Esc>k
+nmap :W :w
+nmap :Q :q
+nmap :wQ :wq
+nmap :WQ :wq
 " nmap <D-s> :update<cr>
 nmap <C-n> :nohl<cr>
 nmap ,js :JSHintToggle<cr>
@@ -355,12 +360,14 @@ nmap ,js :JSHintToggle<cr>
 nmap wm :NERDTreeToggle<cr>  
 nmap ,s :setlocal spell!<cr>
 " other
+nnoremap <c-/> <c-]>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 inoremap <C-k> <C-o>O
 nnoremap <Space> za
+nnoremap <silent><C-w>w :ZoomWin<CR>
 
 set linespace=0
 " 增强模式中的命令行自动完成操作
@@ -394,11 +401,11 @@ set scrolloff=3
 "":inoremap " ""<ESC>i
 "":inoremap ' ''<ESC>i
 ""function! ClosePair(char)
-""	if getline('.')[col('.') - 1] == a:char
-""		return "\<Right>"
-""	else
-""		return a:char
-""	endif
+""    if getline('.')[col('.') - 1] == a:char
+""        return "\<Right>"
+""    else
+""        return a:char
+""    endif
 ""endfunction
 filetype plugin indent on 
 "打开文件类型检测, 加了这句才可以用智能补全
@@ -488,6 +495,7 @@ Bundle 'Javascript-OmniCompletion-with-YUI-and-j'
 Bundle 'jshint.vim'
 Bundle 'VisIncr'
 Bundle 'vim-multiple-cursors'
+Bundle 'ZoomWin'
 Bundle 'nerdcommenter'
 Bundle "pangloss/vim-javascript"
 Bundle 'Vim-Script-Updater'
