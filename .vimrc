@@ -99,7 +99,7 @@ au BufRead,BufNewFile *.{go}   set filetype=go
 au BufRead,BufNewFile *.{js}   set filetype=javascript
 "rkdown to HTML  
 nmap md :!~/.vim/markdown.pl % > %.html <CR><CR>
-nmap fi :!chrome %.html & <CR><CR>
+" nmap fi :!chrome %.html & <CR><CR>
 nmap \ \cc
 vmap \ \cc
 
@@ -323,8 +323,7 @@ let Tlist_Display_Tag_Scope=1
 let Tlist_Enable_Dold_Column=1
 let Tlist_Use_SingleClick=1
 iab dtime <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
-iab ddatt <c-r>=strftime("%Y年%m月%d日")<cr>
-iab ddate <c-r>=strftime("%Y年%m月%d日 %H:%M:%")<cr>
+iab ddatt <c-r>=strftime("%Y年%m月%d日")<cr> iab ddate <c-r>=strftime("%Y年%m月%d日 %H:%M:%")<cr>
 iab jmail jsongo@jsongo.com<cr>
 let g:syntastic_warning_symbol = '⚠'
 let g:csyntastic_error_symbol = '✗'
@@ -336,7 +335,7 @@ let g:JSHintHighlightErrorLine = 1
 nmap ,er :Errors<cr>
 " nmap <c-m> :SyntasticReset<cr>
 nmap ,sc :SyntasticCheck<cr>
-map <leader><leader>c :MBEClose<cr> 
+map <leader><leader>c :tabclose<cr> 
 map <leader><leader>p :tabp<cr> 
 map <leader><leader>n :tabn<cr> 
 nmap nt :tab split<cr> 
@@ -344,8 +343,14 @@ map <silent><leader>al :AcpLock<CR>
 map <silent><leader>au :AcpUnlock<CR>
 nmap ,, :FufCoverageFile <cr>
 nmap tl :TlistToggle<cr>
+nmap ,sp :set paste<cr>
+nmap ,snp :set nopaste<cr>
+nmap ,snh :set nohls<cr>
+nmap ,sh :set hls<cr>
 nmap ,bn :bn<cr>
 nmap ,bp :bp<cr>
+nmap ,u  gul
+nmap ,U  gUl
 nmap <C-s> :update<cr>
 nmap ,nl O<Esc>j
 nmap nl o<Esc>k
