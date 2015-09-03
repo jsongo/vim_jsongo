@@ -351,6 +351,7 @@ nmap ,bn :bn<cr>
 nmap ,bp :bp<cr>
 nmap ,u  gul
 nmap ,U  gUl
+nmap ,w  :w
 nmap <C-s> :update<cr>
 nmap ,nl O<Esc>j
 nmap nl o<Esc>k
