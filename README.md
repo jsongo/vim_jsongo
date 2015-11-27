@@ -76,10 +76,10 @@ git pull origin jsongo
 11. to save the current split view.  
     it will be saved automatically as long as you don't close the split view one by one. Instead, close them will :qa.  
 
-12. command-t
-    `,t`, this will activate the command-t and pop the window.
-    `tab`, switch between command-t windows.
-    `ctl v`, open the file vertically.
-    `ctl j`, switch to the next file. so `ctl k`, to the previous one.
-    `ctl t`, open the file in a new tab.
+12. command-t  
+    `,t`, this will activate the command-t and pop the window.  
+    `tab`, switch between command-t windows.  
+    `ctl v`, open the file vertically.  
+    `ctl j`, switch to the next file. so `ctl k`, to the previous one.  
+    `ctl t`, open the file in a new tab.  
     
