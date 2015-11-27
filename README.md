@@ -31,6 +31,7 @@ git pull origin jsongo
 - mv -f * ~/.vim
 - clone bundle ：`git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
 - Run `:BundleInstall` in vim to build these plugins.
+- To enable command-t, run: `cd ~/.vim/bundle/command-t/ruby/command-t/ && ruby extconf.rb && make`
 - restart the vim to see the surprize.
 
 ### How to use this splendid vim.
