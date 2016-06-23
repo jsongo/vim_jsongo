@@ -65,7 +65,7 @@ set tabstop=4
 " 统一缩进为4
 set softtabstop=4
 set shiftwidth=4
-" 不要用空格代替制表符
+" 使用空格代替制表符
 set expandtab
 " 在行和段开始处使用制表符
 set smarttab
@@ -427,7 +427,9 @@ let Tlist_Exist_OnlyWindow = 1  " 如果只有一个buffer，kill窗口也kill�
 ""let Tlist_File_Fold_Auto_Close = 0  " 不要关闭其他文件的tags  
 ""let Tlist_Enable_Fold_Column = 0    " 不要显示折叠树  
 "let Tlist_Show_One_File=1            "不同时显示多个文件的tag，只显示当前文件的
-
+"设置tags  
+set tags=tags;  
+set autochdir 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "其他东东
@@ -487,7 +489,7 @@ let g:indentLine_char = '┊'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 " non github repos
-Bundle 'git://github.com/wincent/command-t.git'
+Bundle 'https://github.com/wincent/command-t.git'
 Bundle 'Auto-Pairs'
 Bundle 'python-imports.vim'
 Bundle 'CaptureClipboard'
