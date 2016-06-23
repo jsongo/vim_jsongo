@@ -359,6 +359,7 @@ nmap :W :w
 nmap :Q :q
 nmap :wQ :wq
 nmap :WQ :wq
+nmap ,yw "+yw
 " nmap <D-s> :update<cr>
 nmap <C-n> :nohl<cr>
 nmap ,js :JSHintToggle<cr>
