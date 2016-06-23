@@ -31,6 +31,7 @@ git pull origin jsongo
 - mv -f * ~/.vim
 - clone bundle ：`git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
 - Run `:BundleInstall` in vim to build these plugins.
+- To enable command-t, run: `cd ~/.vim/bundle/command-t/ruby/command-t/ && ruby extconf.rb && make`
 - restart the vim to see the surprize.
 
 ### How to use this splendid vim.
@@ -67,10 +68,18 @@ git pull origin jsongo
     press tt  
 
 10. to input time in edit mode:  
-    input: `dtime` ctrl+] (I'll only tell about the word to input without the ctrl+], but you'll still have to press it.)  
+    input: `dtime` ctrl+] (Below, I'll only talk about the word to input without saying `ctrl+]`, but you'll still have to press it.)  
     input: `ddatt` will make it a short date string.  
     input: `ddate` for Chinese date  
     input: `jmail` for my email  
 
 11. to save the current split view.  
     it will be saved automatically as long as you don't close the split view one by one. Instead, close them will :qa.  
+
+12. command-t  
+    `,t`, this will activate the command-t and pop the window.  
+    `tab`, switch between command-t windows.  
+    `ctl v`, open the file vertically.  
+    `ctl j`, switch to the next file. so `ctl k`, to the previous one.  
+    `ctl t`, open the file in a new tab.  
+    
